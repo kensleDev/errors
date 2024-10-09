@@ -124,6 +124,9 @@ export const noThrow = <A>(action: () => A): NoThrowResult<A> => {
   }
 };
 
+/**
+ * log an error in a structured format.
+ */
 export function logError(
   error: unknown,
   context = "General context",
@@ -142,7 +145,9 @@ export function logError(
     extraInfo,
   });
 }
-
+/**
+ * HttpError is a custom error class for HTTP-related errors.
+ */
 export class HttpError extends Error {
   status: number;
   constructor(status: number, message: string) {
